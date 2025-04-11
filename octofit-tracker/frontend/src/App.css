@@ -1,0 +1,288 @@
+/* OctoFit Tracker App Styles */
+
+/* Main App Styles */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App main {
+  flex-grow: 1;
+  background-color: #f0f8ff; /* Light blue background for the main content */
+  padding-bottom: 2rem;
+}
+
+/* Custom Brand Colors */
+:root {
+  --octofit-primary: #2e5c8a;       /* Darker blue */
+  --octofit-secondary: #5a9bd4;      /* Medium blue */
+  --octofit-accent: #f9a03f;         /* Orange accent */
+  --octofit-success: #3aaf75;        /* Green */
+  --octofit-info: #5bc0de;           /* Light blue */
+  --octofit-warning: #f0ad4e;        /* Yellow/orange */
+  --octofit-danger: #d43f3a;         /* Red */
+  --octofit-light: #f8f9fa;          /* Light gray */
+  --octofit-dark: #343a40;           /* Dark gray */
+  --octofit-gradient: linear-gradient(135deg, var(--octofit-primary), var(--octofit-secondary));
+}
+
+/* Navbar Styling */
+.navbar {
+  background: var(--octofit-gradient) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  margin-right: 0.75rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+  color: white !important;
+  border-bottom: 3px solid var(--octofit-accent);
+}
+
+/* Table Enhancements */
+.table {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.table thead {
+  background: var(--octofit-gradient);
+  color: white;
+}
+
+.table thead th {
+  border-bottom: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+
+.table-dark {
+  background-color: var(--octofit-dark);
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Card Styling */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  font-weight: bold;
+  padding: 1rem 1.25rem;
+  border-bottom: none;
+}
+
+.card-header.bg-primary {
+  background: var(--octofit-gradient) !important;
+}
+
+.card-header.bg-success {
+  background: linear-gradient(135deg, var(--octofit-success), #2d8659) !important;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Button Styling */
+.btn {
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--octofit-gradient);
+  border-color: var(--octofit-primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #234a70, #4a85b9);
+  border-color: #234a70;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--octofit-success), #2d8659);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #309c67, #25724c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline-primary {
+  color: var(--octofit-primary);
+  border-color: var(--octofit-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--octofit-primary);
+  color: white;
+}
+
+/* Component Container Styling */
+.users-container,
+.teams-container,
+.activities-container,
+.leaderboard-container,
+.workouts-container {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+/* Section Headings */
+h2 {
+  color: var(--octofit-primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  background-color: var(--octofit-accent);
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* Footer Styling */
+footer {
+  background: var(--octofit-gradient);
+  color: white;
+  padding: 2rem 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 0.3rem;
+  color: var(--octofit-primary);
+}
+
+/* Progress bars */
+.progress {
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: var(--octofit-gradient);
+}
+
+/* Avatar circle styling */
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--octofit-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Badge styling */
+.badge {
+  padding: 0.5em 0.8em;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .users-container,
+  .teams-container,
+  .activities-container,
+  .leaderboard-container,
+  .workouts-container {
+    padding: 1.25rem;
+  }
+}
+
+/* Animation */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
