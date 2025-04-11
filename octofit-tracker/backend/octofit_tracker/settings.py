@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-jvy1@)cp)okcvw%foxgg42=$=4!z**mt3l6u7phw$h-$1d#c)%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'upgraded-meme-pvw9v4wv6v93994w-8000.app.github.dev']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "djongo",
     "octofit_tracker",
 ]
 
@@ -53,7 +52,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "octofit_tracker.urls"
@@ -81,13 +79,15 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "djongo",
-        "NAME": "octofit_db",
-        "HOST": "localhost",
-        "PORT": 27017,
+    'default': {
+        'ENGINE': 'django.db.backends.dummy',  # Placeholder since pymongo will be used directly
     }
 }
+
+# MongoDB connection settings
+MONGO_DB_NAME = 'octofit_db'
+MONGO_HOST = 'localhost'
+MONGO_PORT = 27017
 
 
 # Password validation
